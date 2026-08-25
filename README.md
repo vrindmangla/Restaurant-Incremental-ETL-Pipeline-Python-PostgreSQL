@@ -1,4 +1,6 @@
+
 ````markdown
+
 # 🍽️ Restaurant Incremental ETL Pipeline
 
 ### Python + PostgreSQL | Incremental Loading | UPSERT | ETL Logging
@@ -62,6 +64,7 @@ The pipeline also maintains an `etl_log` table that records the execution time o
 ## 🏗️ Architecture
 
 ```mermaid
+
 flowchart TD
     A[🍽️ restaurants.csv] --> B[🐍 Python / Pandas]
     B --> C[🧹 Clean Column Names]
