@@ -74,56 +74,6 @@ flowchart TD
     J --> K[✅ COMMIT]
     K --> L[🎉 ETL Completed]
 
-# 🎯 Project Overview
-
-This project implements an **incremental ETL pipeline** using Python, Pandas, and PostgreSQL.
-
-The source file contains restaurant information along with:
-
-- `created`
-- `modified`
-
-timestamps.
-
-Instead of loading the complete source dataset during every execution, the pipeline identifies only records that are:
-
-- newly created, or
-- modified since the previous ETL run.
-
-Only those records are loaded into the PostgreSQL staging table.
-
-The pipeline also maintains an `etl_log` table that records the execution time of the staging ETL process.
-
----
-
-# 🏗️ Architecture
-
-```mermaid
-flowchart TD
-
-    A[🍽️ restaurants.csv] --> B[🐍 Python / Pandas]
-
-    B --> C[🧹 Clean Column Names]
-
-    C --> D[🕒 Get Last ETL Ingestion Time]
-
-    D --> E{New or Modified?}
-
-    E -->|Yes| F[📦 Incremental DataFrame]
-
-    E -->|No| G[⏭️ Skip Record]
-
-    F --> H[🗄️ restaurants_stag]
-
-    H --> I[🔁 UPSERT]
-
-    I --> J[📝 etl_log]
-
-    J --> K[✅ COMMIT]
-
-    K --> L[🎉 ETL Completed]
-````
-
 ---
 
 # 💡 Why Incremental Loading?
