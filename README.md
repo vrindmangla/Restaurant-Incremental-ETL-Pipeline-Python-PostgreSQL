@@ -73,6 +73,7 @@ flowchart TD
     I --> J[📝 etl_log]
     J --> K[✅ COMMIT]
     K --> L[🎉 ETL Completed]
+```
 
 ---
 
