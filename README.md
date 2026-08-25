@@ -1,6 +1,4 @@
 
-````markdown
-
 # 🍽️ Restaurant Incremental ETL Pipeline
 
 ### Python + PostgreSQL | Incremental Loading | UPSERT | ETL Logging
@@ -9,13 +7,12 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![psycopg2](https://img.shields.io/badge/psycopg2-PostgreSQL%20Driver-orange)](https://www.psycopg.org/)
-[![ETL](https://img.shields.io/badge/ETL-Incremental%20Pipeline-success)]()
-[![SCD Type 1](https://img.shields.io/badge/SCD-Type%201-purple)]()
+![ETL](https://img.shields.io/badge/ETL-Incremental%20Pipeline-success)
+![SCD Type 1](https://img.shields.io/badge/SCD-Type%201-purple)
 
 > A Python and PostgreSQL incremental ETL pipeline that reads restaurant data from CSV, identifies newly created and modified records, loads only incremental records into a staging table, performs UPSERT operations, and maintains an ETL execution log.
 
 ---
-
 ## 📌 Table of Contents
 
 - [🎯 Project Overview](#-project-overview)
@@ -64,7 +61,6 @@ The pipeline also maintains an `etl_log` table that records the execution time o
 ## 🏗️ Architecture
 
 ```mermaid
-
 flowchart TD
     A[🍽️ restaurants.csv] --> B[🐍 Python / Pandas]
     B --> C[🧹 Clean Column Names]
@@ -77,7 +73,6 @@ flowchart TD
     I --> J[📝 etl_log]
     J --> K[✅ COMMIT]
     K --> L[🎉 ETL Completed]
----
 
 # 🎯 Project Overview
 
